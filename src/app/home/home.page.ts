@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
 
+  ListeHackathons: any;
+
+  constructor(private http: HttpClient, private router: Router) {
+
+    this.http.get("http://localhost:8000/api/hackathons").subscribe(results => {
+      console.log(results);
+      this.ListeHackathons=results; 
+    })
+  }
 }
