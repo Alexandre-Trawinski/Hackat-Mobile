@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detailHackathon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar slot="start"> <img src="{{item.image}}"></ion-avatar>
+      <ion-label>{{item.theme}}
+      <p>{{item.lieu}}, {{item.ville}}, {{item.CP}}</p>
+      <p>Début le {{item.dateDebut.date | date: 'dd/MM/yyyy'}}, {{item.heureDebut.date | date: 'HH:mm'}} </p>
+      <p>Fin le {{item.dateFin.date | date: 'dd/MM/yyyy'}}, {{item.heureFin.date | date: 'HH:mm'}} </p>
+    </ion-label>
+
+</ion-content>
