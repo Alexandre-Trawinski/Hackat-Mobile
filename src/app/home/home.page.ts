@@ -38,4 +38,4 @@ export class HomePage {
   {
     this.router.navigate(['/form-login']);
   }
-}
+} 

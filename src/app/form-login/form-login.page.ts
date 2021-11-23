@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { HttpClient} from "@angular/common/http";
+import { NavigationExtras } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,8 +15,8 @@ export class FormLoginPage implements OnInit {
   myForm: FormGroup;
   submitted = false;
 
-
-  constructor(public formBuilder: FormBuilder) { }
+  connexion = {login:"",password:""}
+  constructor(public formBuilder: FormBuilder, private router: Router, private http:HttpClient) { }
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -33,6 +36,9 @@ export class FormLoginPage implements OnInit {
       return false;
     } else {
       console.log(this.myForm.value)
+      this.http.post("http://localhost:8000/api/participants/login", this.connexion)
+    .subscribe(results=>{})
+      
     }
   }
 }
