@@ -33,4 +33,9 @@ export class HomePage {
     };
     this.router.navigate(['/detail-hackathon/{id}'], navigationExtras);
   }
+
+  MonClickLogin()
+  {
+    this.router.navigate(['/form-login']);
+  }
 }
