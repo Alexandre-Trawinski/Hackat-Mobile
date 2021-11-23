@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
 
 @Component({
@@ -10,7 +10,17 @@ import { NavigationExtras } from '@angular/router';
 })
 export class DetailHackathonPage implements OnInit {
 
-  constructor() { }
+  item="";
+
+  constructor(private router: Router,
+    private activeRoute : ActivatedRoute) {
+      this.activeRoute.queryParams.subscribe(params =>{
+        if(this.router.getCurrentNavigation().extras.state) {
+          this.item=
+          this.router.getCurrentNavigation().extras.state.param1;
+        }
+      });
+    }
 
   ngOnInit() {
   }

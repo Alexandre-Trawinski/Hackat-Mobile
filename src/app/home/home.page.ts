@@ -22,16 +22,13 @@ export class HomePage {
     })
   }
 
-  ClickDetail(item)
-  {
-    let navigationExtras:NavigationExtras=
-    {
-      state:
-      {
-        param1:item
+  ClickDetails(item){
+    let navigationExtras: NavigationExtras = {
+      state: {
+      param1: item
       }
-    };
-    this.router.navigate(['/detail-hackathon/{id}'], navigationExtras);
+    }
+    this.router.navigate(['/detail-hackathon'], navigationExtras);
   }
 
   MonClickLogin()
