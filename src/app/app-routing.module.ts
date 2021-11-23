@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'detail-hackathon',
     loadChildren: () => import('./detail-hackathon/detail-hackathon.module').then( m => m.DetailHackathonPageModule)
   },
+  {
+    path: 'form-login',
+    loadChildren: () => import('./form-login/form-login.module').then( m => m.FormLoginPageModule)
+  },
 ];
 
 @NgModule({

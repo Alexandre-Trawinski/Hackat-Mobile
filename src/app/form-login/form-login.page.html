@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+  
+
+    <ion-item lines="full">
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input formControlName="pwd" type="password"></ion-input>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Connexion</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
+

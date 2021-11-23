@@ -46,7 +46,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of ListeHackathons" (click)="MonClick(item)">
+    <ion-item *ngFor="let item of ListeHackathons" (click)="ClickDetail(item)">
       <ion-avatar slot="start"> <img src="{{item.image}}"></ion-avatar>
       <ion-label>{{item.theme}}
       <p>{{item.lieu}}, {{item.ville}}, {{item.CP}}</p>

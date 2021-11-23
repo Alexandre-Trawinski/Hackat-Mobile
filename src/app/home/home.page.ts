@@ -31,6 +31,6 @@ export class HomePage {
         param1:item
       }
     };
-    this.router.navigate(['/detail-hackathon'], navigationExtras);
+    this.router.navigate(['/detail-hackathon/{id}'], navigationExtras);
   }
 }

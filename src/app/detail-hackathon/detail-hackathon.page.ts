@@ -15,16 +15,6 @@ export class DetailHackathonPage implements OnInit {
   ngOnInit() {
   }
 
-  ClickDetail(item)
-  {
-    let navigationExtras:NavigationExtras=
-    {
-      state:
-      {
-        param1:item
-      }
-    };
-    this.router.navigate(['/page2'], navigationExtras);
-  }
+  
 
 }
