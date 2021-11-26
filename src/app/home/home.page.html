@@ -7,14 +7,19 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>
+        <ion-item *ngIf="isconnected ==0">
           <ion-icon name="log-in" slot="start" (click)=MonClickLogin()></ion-icon>
           <ion-label (click)=MonClickLogin()>Connexion</ion-label>
         </ion-item>
 
-        <ion-item>
+        <ion-item *ngIf="isconnected ==1">
           <ion-icon name="power" color="danger" slot="start" (click)=MonClickDisconnect()></ion-icon>
           <ion-label (click)=MonClickDisconnect()>Déconnexion</ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="isconnected ==1">
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-label>{{email}}</ion-label>
         </ion-item>
        
       </ion-list>
