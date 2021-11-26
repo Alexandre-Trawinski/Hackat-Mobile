@@ -1,15 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detailHackathon</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Détails du hackathon
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-avatar slot="start"> <img src="{{item.image}}"></ion-avatar>
-      <ion-label>{{item.theme}}
-      <p>{{item.lieu}}, {{item.ville}}, {{item.CP}}</p>
-      <p>Début le {{item.dateDebut.date | date: 'dd/MM/yyyy'}}, {{item.heureDebut.date | date: 'HH:mm'}} </p>
-      <p>Fin le {{item.dateFin.date | date: 'dd/MM/yyyy'}}, {{item.heureFin.date | date: 'HH:mm'}} </p>
-    </ion-label>
+      <ion-card>
+        <ion-card-header>
+          <img src="{{item.image}}">
+          <br>
+          
+          <ion-card-title>{{item.theme}}</ion-card-title>
+          <br>
+          <ion-card-subtitle> <b> Date du début de l'évènement :</b> {{item.dateDebut.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+          <br>
+          <ion-card-subtitle><b> Date de fin de l'évènement : </b> {{item.dateFin.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+          <br>
+          <ion-card-subtitle> <b> Heure d'ouverture de l'évènement : </b> {{item.heureDebut.date | date: 'HH:mm'}}</ion-card-subtitle>
+          <br>
+          <ion-card-subtitle> <b> Date limite d'inscription : </b>{{item.dateLimite.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+          <br>
+          <ion-card-subtitle> {{item.lieu}}, {{item.rue}}, {{item.ville}}, {{item.CP}}</ion-card-subtitle>
+          <br>
+          <ion-card-subtitle> <b> {{item.nbPlaces}} </b> places restantes</ion-card-subtitle>
+          
+        </ion-card-header>
+        <ion-card-content>
 
+        
+        </ion-card-content>
+      </ion-card>
 </ion-content>
