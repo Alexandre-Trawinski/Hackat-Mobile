@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Les Evenements du hackathon
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of Evenement"> 
+  <ion-card>
+    <ion-card-header>
+      <img src="{{item.image}}">
+            
+      <ion-card-title>{{item.libelle}}</ion-card-title>
+      <br>
+      <ion-card-subtitle> <b> Date du début de l'évènement :</b> {{item.date.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle><b> Heure de debut de l'évènement : </b> {{item.heureDebut.date | date: 'HH:mm'}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Duree de l'évènement : </b> {{item.duree.date | date: 'HH:mm'}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Salle : </b>{{item.salle}}</ion-card-subtitle>
+      
+    </ion-card-header>
+    <ion-card-content>
+
+    
+    </ion-card-content>
+  </ion-card>
+</ion-item>
+</ion-list>
+</ion-content>
