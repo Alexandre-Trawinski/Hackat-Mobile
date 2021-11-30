@@ -11,15 +11,31 @@ import { NavigationExtras } from '@angular/router';
 })
 export class HomePage {
 
-
   ListeHackathons: any;
+  ListeHackathonsAff: any;
+  ListeVille:any;
 
   constructor(private http: HttpClient, private router: Router) {
 
     this.http.get("http://localhost:8000/api/hackathons").subscribe(results => {
       console.log(results);
       this.ListeHackathons=results; 
+      this.ListeHackathonsAff=results; 
+      let ville = [];
+      this.ListeHackathons.forEach(element => {
+        ville.push(element.ville)
+      });
+      this.ListeVille = Array.from(new Set(ville));
     })
+  }
+
+  onChange(e){
+    console.log(e.target.value)
+    this.ListeHackathonsAff=[];
+    this.ListeHackathons.forEach(element => {
+      if(element.ville == e.target.value)this.ListeHackathonsAff.push(element);
+    });
+
   }
 
   ClickDetails(item){
