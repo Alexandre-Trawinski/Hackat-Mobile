@@ -39,6 +39,7 @@ export class HomePage {
   }
 
   ClickDetails(item){
+    console.log(item);
     let navigationExtras: NavigationExtras = {
       state: {
       param1: item
