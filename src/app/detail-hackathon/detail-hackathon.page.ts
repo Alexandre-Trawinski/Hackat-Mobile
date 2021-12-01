@@ -25,6 +25,13 @@ export class DetailHackathonPage implements OnInit {
   ngOnInit() {
   }
 
-  
+  MonClickAtelier(item){
+    let navigationExtras: NavigationExtras = {
+      state: {
+      param1: item
+      }
+    }
+    this.router.navigate(['/atelier'], navigationExtras);
+  }
 
 }
