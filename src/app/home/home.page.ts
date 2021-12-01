@@ -19,7 +19,7 @@ export class HomePage {
   isconnected=0;
 
   constructor(private http: HttpClient, private router: Router, private activeRoute: ActivatedRoute,private nativeStorage: Storage) {
-    this.nativeStorage./*create()*/get('user')
+   /* this.nativeStorage.create()get('user')
   .then(
     data => {
       console.log(data);
@@ -27,7 +27,7 @@ export class HomePage {
      this.email = data.user.nom;
     },
     error => console.error(error)
-  );
+  );*/
 
     this.http.get("http://localhost:8000/api/hackathons").subscribe(results => {
       console.log(results);
