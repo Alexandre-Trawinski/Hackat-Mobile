@@ -13,8 +13,9 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class HomePage {
 
-
   ListeHackathons: any;
+  ListeHackathonsAff: any;
+  ListeVille:any;
   email="";
   isconnected=0;
 
@@ -32,14 +33,27 @@ export class HomePage {
     this.http.get("http://localhost:8000/api/hackathons").subscribe(results => {
       console.log(results);
       this.ListeHackathons=results; 
-    
-    });
+      this.ListeHackathonsAff=results; 
+      let ville = [];
+      this.ListeHackathons.forEach(element => {
+        ville.push(element.ville)
+      });
+      this.ListeVille = Array.from(new Set(ville));
+    })
     this.activeRoute.queryParams.subscribe(params=>{
       if(this.router.getCurrentNavigation().extras.state){
        this.email=this.router.getCurrentNavigation().extras.state.param1;
       }
     });
-   
+  }
+
+  onChange(e){
+    console.log(e.target.value)
+    this.ListeHackathonsAff=[];
+    this.ListeHackathons.forEach(element => {
+      if(element.ville == e.target.value)this.ListeHackathonsAff.push(element);
+    });
+
   }
 
   ClickDetails(item){
