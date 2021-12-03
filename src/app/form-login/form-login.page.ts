@@ -43,22 +43,26 @@ export class FormLoginPage implements OnInit {
         console.log(data)
         this.nativeStorage.set('user', {connected: 1, user:data})
         
-        //this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       })
-      /*console.log(this.myForm.value)
+      console.log(this.myForm.value)
       if(this.myForm.value.email == "http://localhost:8000/api/participants[{email}]" && this.myForm.value.pwd=="http://localhost:8000/api/participants[{password}]"){
         //connecté
         this.router.navigate(['/home']);
 
       }
-      else alert("login ou pwd incorrect")*/
-      /*let navigationExtras: NavigationExtras = {
+      else alert("login ou pwd incorrect")
+      let navigationExtras: NavigationExtras = {
         state : {
         param1: this.myForm.value.email
         }
         }
-        this.router.navigate(['/home'], navigationExtras);*/
-
+        this.router.navigate(['/home'], navigationExtras);
+        
     }
+  }
+  MonClickLogin()
+  {
+    this.router.navigate(['/home']);
   }
 }
