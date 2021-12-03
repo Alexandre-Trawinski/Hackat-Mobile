@@ -6,26 +6,24 @@
     <ion-title>Connexion</ion-title>
   </ion-toolbar>
 </ion-header>
-  
 <ion-content>
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="email" type="email"></ion-input>
-    </ion-item>
-  
+<form>
+<ion-item >
+  <ion-label color="light">Email</ion-label>
+  <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
+</ion-item>
 
-    <ion-item lines="full">
-      <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input formControlName="pwd" type="password"></ion-input>
-    </ion-item>
-
+<ion-item>
+  <ion-label color="light">Mot de passe</ion-label>
+  <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+</ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Connexion</ion-button>
+        <ion-button type="submit"color="light" expand="block" shape="round" fill="outline" (click)=MonClickLogin()>Connexion</ion-button>
       </ion-col>
     </ion-row>
-  </form>
+</form>
+
 </ion-content>
 

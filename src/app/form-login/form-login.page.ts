@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { NavigationExtras } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -17,7 +19,7 @@ export class FormLoginPage implements OnInit {
 
 
 
-  constructor(public formBuilder: FormBuilder,private router: Router,private http:HttpClient) { }
+  constructor(public formBuilder: FormBuilder,private router: Router,private http:HttpClient,private nativeStorage: Storage) { }
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -39,17 +41,28 @@ export class FormLoginPage implements OnInit {
     } else {
       this.http.get("http://localhost:8000/api/participants/"+this.myForm.value.email+"/"+this.myForm.value.pwd).subscribe((data)=>{
         console.log(data)
-        this.isconnected=1;
+        this.nativeStorage.set('user', {connected: 1, user:data})
+        
         this.router.navigate(['/home']);
       })
-      /*console.log(this.myForm.value)
+      console.log(this.myForm.value)
       if(this.myForm.value.email == "http://localhost:8000/api/participants[{email}]" && this.myForm.value.pwd=="http://localhost:8000/api/participants[{password}]"){
         //connecté
         this.router.navigate(['/home']);
 
       }
-      else alert("login ou pwd incorrect")*/
-
+      else alert("login ou pwd incorrect")
+      let navigationExtras: NavigationExtras = {
+        state : {
+        param1: this.myForm.value.email
+        }
+        }
+        this.router.navigate(['/home'], navigationExtras);
+        
     }
+  }
+  MonClickLogin()
+  {
+    this.router.navigate(['/home']);
   }
 }
