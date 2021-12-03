@@ -48,8 +48,14 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>Trier par ville</ion-label>
+    <ion-select interface="popover" (ionchange)="onChange($event)">
+      <ion-select-option *ngFor="let item of ListeVille">{{item}}</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-list>
-    <ion-item *ngFor="let item of ListeHackathons" (click)="ClickDetails(item)">
+    <ion-item *ngFor="let item of ListeHackathonsAff" (click)="ClickDetails(item)">
       <ion-avatar slot="start"> <img src="{{item.image}}"></ion-avatar>
       <ion-label>{{item.theme}}
       <p>{{item.lieu}}, {{item.ville}}, {{item.CP}}</p>
