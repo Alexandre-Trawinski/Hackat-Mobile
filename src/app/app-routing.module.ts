@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'atelier',
     loadChildren: () => import('./atelier/atelier.module').then( m => m.AtelierPageModule)
   },
+  {
+    path: 'inscription-evenement',
+    loadChildren: () => import('./inscription-evenement/inscription-evenement.module').then( m => m.InscriptionEvenementPageModule)
+  },
 ];
 
 @NgModule({

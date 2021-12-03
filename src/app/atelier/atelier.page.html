@@ -26,6 +26,12 @@
       <ion-card-subtitle> <b> Duree de l'évènement : </b> {{item.duree.date | date: 'HH:mm'}}</ion-card-subtitle>
       <br>
       <ion-card-subtitle> <b> Salle : </b>{{item.salle}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Type : </b>{{item.type}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle>
+        <ion-button *ngIf="item.type=='Atelier'"(click)="MonClickInscription" color="success">S'inscrire à l'atelier</ion-button>
+      </ion-card-subtitle>
       
     </ion-card-header>
     <ion-card-content>

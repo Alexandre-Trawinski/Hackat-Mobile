@@ -34,4 +34,12 @@ export class AtelierPage implements OnInit {
   ngOnInit() {
   }
 
+  MonClickInscription(item){
+    let navigationExtras: NavigationExtras = {
+      state: {
+      param1: item
+      }
+    }
+    this.router.navigate(['/inscription-evenement'], navigationExtras);
+  }
 }
