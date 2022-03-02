@@ -30,7 +30,7 @@
       <ion-card-subtitle> <b> Type : </b>{{item.type}}</ion-card-subtitle>
       <br>
       <ion-card-subtitle>
-        <ion-button *ngIf="item.type=='Atelier'"(click)="MonClickInscription" color="success">S'inscrire à l'atelier</ion-button>
+        <ion-button *ngIf="item.type=='Atelier'"(click)="MonClickInscription(item)" color="success">S'inscrire à l'atelier</ion-button>
       </ion-card-subtitle>
       
     </ion-card-header>

@@ -4,11 +4,25 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Incription à l'evenement
+      Inscription à l'atelier
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
+  <form (ngSubmit)="logForm(data)">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]=user.nom name=nom></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input type="text" [(ngModel)]=user.prenom name=prenom></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]=user.email name=email></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="success" >Valider</ion-button>
+  </form>
 </ion-content>
