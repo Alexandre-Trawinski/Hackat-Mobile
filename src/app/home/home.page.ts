@@ -15,6 +15,7 @@ export class HomePage {
 
   ListeHackathons: any;
   ListeHackathonsAff: any;
+
   ListeVille:any;
   email="";
   isconnected=0;
@@ -47,13 +48,15 @@ export class HomePage {
     });
   }
 
-  onChange(e){
-    console.log(e.target.value)
-    this.ListeHackathonsAff=[];
-    this.ListeHackathons.forEach(element => {
-      if(element.ville == e.target.value)this.ListeHackathonsAff.push(element);
+  //Fonction tri par ville
+  onChange($event){
+    this.ListeHackathonsAff = [];
+    console.log($event.detail.value);
+    this.ListeHackathons.forEach(villeSelectionnee => {
+      if(villeSelectionnee.ville == $event.detail.value) {
+        this.ListeHackathonsAff.push(villeSelectionnee);
+      }
     });
-
   }
 
   ClickDetails(item){
