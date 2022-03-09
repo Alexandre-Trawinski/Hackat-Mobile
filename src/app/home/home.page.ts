@@ -52,12 +52,18 @@ export class HomePage {
   onChange($event){
     this.ListeHackathonsAff = [];
     console.log($event.detail.value);
-    this.ListeHackathons.forEach(villeSelectionnee => {
-      if(villeSelectionnee.ville == $event.detail.value) {
-        this.ListeHackathonsAff.push(villeSelectionnee);
-      }
-    });
+    if($event.detail.value != "toutesLesVilles") {
+      this.ListeHackathons.forEach(villeSelectionnee => {
+        if(villeSelectionnee.ville == $event.detail.value) {
+          this.ListeHackathonsAff.push(villeSelectionnee);
+        }
+      });
+    }
+    else {
+      this.ListeHackathonsAff = this.ListeHackathons;
+    }
   }
+
 
   ClickDetails(item){
     console.log(item);

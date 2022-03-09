@@ -53,6 +53,7 @@
       <ion-label>Trier par ville</ion-label>
       <ion-select interface="popover" (ionChange)="onChange($event)">
         <ion-select-option *ngFor="let ville of ListeVille">{{ville}}</ion-select-option>
+        <ion-select-option value="toutesLesVilles">Toutes les villes</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-list>
