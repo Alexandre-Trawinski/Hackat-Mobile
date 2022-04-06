@@ -12,7 +12,7 @@
 <ion-content>
       <ion-card>
         <ion-card-header>
-          <img src="{{item.image}}">
+          <img src="data:image/png;base64,{{item.image}}">
           <br>
           
           <ion-card-title>{{item.theme}}</ion-card-title>
@@ -30,6 +30,7 @@
           <ion-card-subtitle> <b> {{item.nbPlaces}} </b> places restantes</ion-card-subtitle>
           <br>
           <ion-card-subtitle><ion-button (click)="MonClickAtelier(item.Id)"color="success">Voir les événements</ion-button></ion-card-subtitle>
+        
           
         </ion-card-header>
         <ion-card-content>

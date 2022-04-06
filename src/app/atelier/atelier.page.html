@@ -15,7 +15,7 @@
     <ion-item *ngFor="let item of Evenement"> 
   <ion-card>
     <ion-card-header>
-      <img src="{{item.image}}">
+      <img src="data:image/png;base64,{{item.image}}">
             
       <ion-card-title>{{item.libelle}}</ion-card-title>
       <br>
@@ -28,6 +28,8 @@
       <ion-card-subtitle> <b> Salle : </b>{{item.salle}}</ion-card-subtitle>
       <br>
       <ion-card-subtitle> <b> Type : </b>{{item.type}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Place : </b>{{item.nbParticipants}}</ion-card-subtitle>
       <br>
       <ion-card-subtitle>
         <ion-button *ngIf="item.type=='Atelier'"(click)="MonClickInscription(item)" color="success">S'inscrire à l'atelier</ion-button>
