@@ -35,7 +35,7 @@ export class InscriptionEvenementPage implements OnInit {
     //console.log(e.id)
     //console.log(this.user);
     this.storage.set('user', this.user)
-    this.http.post("http://localhost:8000/api/hackathons/evenements/"+e.id+"/inscriptionAtelier",this.user).subscribe(results => {
+    this.http.post("https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/hackathons/evenements/"+e.id+"/inscriptionAtelier",this.user).subscribe(results => {
     // console.log(results);
     this.Inscription=results;
     
