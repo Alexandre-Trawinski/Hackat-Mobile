@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
