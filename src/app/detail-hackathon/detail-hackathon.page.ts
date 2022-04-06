@@ -9,29 +9,24 @@ import { NavigationExtras } from '@angular/router';
   styleUrls: ['./detail-hackathon.page.scss'],
 })
 export class DetailHackathonPage implements OnInit {
+  item = '';
 
-  item="";
-
-  constructor(private router: Router,
-    private activeRoute : ActivatedRoute) {
-      this.activeRoute.queryParams.subscribe(params =>{
-        if(this.router.getCurrentNavigation().extras.state) {
-          this.item=
-          this.router.getCurrentNavigation().extras.state.param1;
-        }
-      });
-    }
-
-  ngOnInit() {
+  constructor(private router: Router, private activeRoute: ActivatedRoute) {
+    this.activeRoute.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.item = this.router.getCurrentNavigation().extras.state.param1;
+      }
+    });
   }
 
-  MonClickAtelier(item){
+  ngOnInit() {}
+
+  MonClickAtelier(item) {
     let navigationExtras: NavigationExtras = {
       state: {
-      param1: item
-      }
-    }
+        param1: item,
+      },
+    };
     this.router.navigate(['/atelier'], navigationExtras);
   }
-
 }
