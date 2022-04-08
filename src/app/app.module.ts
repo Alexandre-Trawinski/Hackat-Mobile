@@ -10,6 +10,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { IonicStorageModule } from '@ionic/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +24,7 @@ import { environment } from '../environments/environment';
   registrationStrategy: 'registerWhenStable:30000'
 })],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    Geolocation, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
