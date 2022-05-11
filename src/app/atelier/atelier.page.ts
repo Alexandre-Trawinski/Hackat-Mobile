@@ -21,7 +21,7 @@ export class AtelierPage implements OnInit {
           this.router.getCurrentNavigation().extras.state.param1;
           */
          mid =this.router.getCurrentNavigation().extras.state.param1;
-         this.http.get("https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/hackathons/"+mid+"/evenements").subscribe(results => {
+         this.http.get("https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/hackathons/"+mid+"/evenements").subscribe(results => {
           console.log(results);
           this.Evenement=results;
         });

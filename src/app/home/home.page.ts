@@ -34,7 +34,7 @@ export class HomePage {
     error => console.error(error)
   );*/
     this.http
-      .get('https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/hackathons')
+      .get('https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/hackathons')
       .subscribe((results) => {
         console.log(results);
         this.ListeHackathons = results;

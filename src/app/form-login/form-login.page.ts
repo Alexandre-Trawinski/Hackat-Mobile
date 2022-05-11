@@ -39,14 +39,14 @@ export class FormLoginPage implements OnInit {
       console.log('All fiels are required.')
       return false;
     } else {
-      this.http.get("https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/participants/"+this.myForm.value.email+"/"+this.myForm.value.pwd).subscribe((data)=>{
+      this.http.get("https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/participants/"+this.myForm.value.email+"/"+this.myForm.value.pwd).subscribe((data)=>{
         console.log(data)
         this.nativeStorage.set('user', {connected: 1, user:data})
         
         this.router.navigate(['/home']);
       })
       console.log(this.myForm.value)
-      if(this.myForm.value.email == "https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/participants[{email}]" && this.myForm.value.pwd=="https://www.sio-savary.fr/~tfavreau/hackat-web/public/api/participants[{password}]"){
+      if(this.myForm.value.email == "https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/participants[{email}]" && this.myForm.value.pwd=="https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/participants[{password}]"){
         //connecté
         this.router.navigate(['/home']);
 
