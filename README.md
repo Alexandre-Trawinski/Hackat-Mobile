@@ -24,3 +24,12 @@ npm install
 ```bash
 ionic serve
 ```
+
+## Référentiel pour les commits :
+
+- feat(): -> nouvelle fonction
+- fix(): -> correction code
+- refactor(): -> refactorisation du code
+- doc(): -> ajout / modif de documentation
+
+feat(nom du fichier): description de la modification
