@@ -26,7 +26,6 @@ export class DetailHackathonPage implements OnInit {
     this.http
       .get('https://api-adresse.data.gouv.fr/search/?q=Lille')
       .subscribe(results => {
-        console.log(results);
       });
   }
 
@@ -49,7 +48,6 @@ export class DetailHackathonPage implements OnInit {
 
   ionViewDidEnter() {
     this.geolocation.getCurrentPosition().then((data) => {    
-      console.log(data.coords);
       this.lat=data.coords.latitude;
       this.long=data.coords.longitude;
       return this.initMap();

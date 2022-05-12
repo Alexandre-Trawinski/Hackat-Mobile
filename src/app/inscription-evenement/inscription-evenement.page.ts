@@ -25,18 +25,14 @@ export class InscriptionEvenementPage implements OnInit {
       .then(
         data => {
           console.log(data);
-          //if(data) {remplir les champs}
         },
         error => console.error(error)
       );
     }
     
   logForm(e){
-    //console.log(e.id)
-    //console.log(this.user);
     this.storage.set('user', this.user)
     this.http.post("https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/hackathons/evenements/"+e.id+"/inscriptionAtelier",this.user).subscribe(results => {
-    // console.log(results);
     this.Inscription=results;
     
     this.router.navigate(['/home']);

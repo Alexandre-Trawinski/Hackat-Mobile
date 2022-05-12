@@ -24,19 +24,9 @@ export class HomePage {
     private activeRoute: ActivatedRoute,
     private nativeStorage: Storage
   ) {
-    /* this.nativeStorage.create()get('user')
-  .then(
-    data => {
-      console.log(data);
-     this.isconnected=data.connected;
-     this.email = data.user.nom;
-    },
-    error => console.error(error)
-  );*/
     this.http
       .get('https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/hackathons')
       .subscribe((results) => {
-        console.log(results);
         this.ListeHackathons = results;
         this.ListeHackathonsAff = results;
         let ville = [];
@@ -55,7 +45,6 @@ export class HomePage {
   //Fonction tri par ville
   onChange($event) {
     this.ListeHackathonsAff = [];
-    console.log($event.detail.value);
     if ($event.detail.value != 'toutesLesVilles') {
       this.ListeHackathons.forEach((villeSelectionnee) => {
         if (villeSelectionnee.ville == $event.detail.value) {
@@ -68,7 +57,6 @@ export class HomePage {
   }
 
   ClickDetails(item) {
-    console.log(item);
     let navigationExtras: NavigationExtras = {
       state: {
         param1: item,
