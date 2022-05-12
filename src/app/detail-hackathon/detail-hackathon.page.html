@@ -10,32 +10,37 @@
 </ion-header>
 
 <ion-content>
-      <ion-card>
-        <ion-card-header>
-          <img src="data:image/png;base64,{{item.image}}">
-          <br>
-          
-          <ion-card-title>{{item.theme}}</ion-card-title>
-          <br>
-          <ion-card-subtitle> <b> Date du début de l'évènement :</b> {{item.dateDebut.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle><b> Date de fin de l'évènement : </b> {{item.dateFin.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle> <b> Heure d'ouverture de l'évènement : </b> {{item.heureDebut.date | date: 'HH:mm'}}</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle> <b> Date limite d'inscription : </b>{{item.dateLimite.date | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle> {{item.lieu}}, {{item.rue}}, {{item.ville}}, {{item.CP}}</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle> <b> {{item.nbPlaces}} </b> places restantes</ion-card-subtitle>
-          <br>
-          <ion-card-subtitle><ion-button (click)="MonClickAtelier(item.Id)"color="success">Voir les événements</ion-button></ion-card-subtitle>
-        
-          
-        </ion-card-header>
-        <ion-card-content>
+  <ion-card>
+    <ion-card-header>
+      <img src="data:image/png;base64,{{item.image}}">
+      <br>
 
-        
-        </ion-card-content>
-      </ion-card>
+      <ion-card-title>{{item.theme}}</ion-card-title>
+      <br>
+      <ion-card-subtitle> <b> Date du début de l'évènement :</b> {{item.dateDebut.date | date: 'dd/MM/yyyy'}}
+      </ion-card-subtitle>
+      <br>
+      <ion-card-subtitle><b> Date de fin de l'évènement : </b> {{item.dateFin.date | date: 'dd/MM/yyyy'}}
+      </ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Heure d'ouverture de l'évènement : </b> {{item.heureDebut.date | date: 'HH:mm'}}
+      </ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> Date limite d'inscription : </b>{{item.dateLimite.date | date: 'dd/MM/yyyy'}}
+      </ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> {{item.lieu}}, {{item.rue}}, {{item.ville}}, {{item.CP}}</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle> <b> {{item.nbPlaces}} </b> places restantes</ion-card-subtitle>
+      <br>
+      <ion-card-subtitle>
+        <ion-button (click)="MonClickAtelier(item.Id)" color="success">Voir les événements</ion-button>
+      </ion-card-subtitle>
+
+
+    </ion-card-header>
+    <ion-card-content>
+      <div id="map" style="height:200px;"></div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
