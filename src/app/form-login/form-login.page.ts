@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NavigationExtras } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
-
 
 @Component({
   selector: 'app-form-login',
@@ -19,7 +17,7 @@ export class FormLoginPage implements OnInit {
 
 
 
-  constructor(public formBuilder: FormBuilder,private router: Router,private http:HttpClient,private nativeStorage: Storage) { }
+  constructor(public formBuilder: FormBuilder,private router: Router,private http:HttpClient) { }
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -38,7 +36,7 @@ export class FormLoginPage implements OnInit {
       return false;
     } else {
       this.http.get("https://www.sio-savary.fr/~atrawinski/hackat-web/public/api/participants/"+this.myForm.value.email+"/"+this.myForm.value.pwd).subscribe((data)=>{
-        this.nativeStorage.set('user', {connected: 1, user:data})
+        //this.nativeStorage.set('user', {connected: 1, user:data})
         
         this.router.navigate(['/home']);
       })
